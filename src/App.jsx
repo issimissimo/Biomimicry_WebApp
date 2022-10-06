@@ -60,8 +60,10 @@ const App = () => {
   // )
 
   return (
-    <div id="App" className="min-h-screen flex flex-col items-center p-7">
+    <div id="App" className="min-h-screen flex flex-col justify-between items-center p-7">
       <Header />
+      <List />
+      <Footer />
     </div>
   )
 }
