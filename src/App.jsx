@@ -8,16 +8,14 @@ import { io } from "socket.io-client";
 import Header from "./components/Header";
 import List from "./components/List";
 import Footer from "./components/Footer";
-
-
-import { VideoElement, VideoElementState } from "./components/subComponents/VideoElement";
+import SocketError from "./components/SocketError";
 
 
 /// Connect to Server
 const socket = io();
 const serverBaseUrl = document.domain;
 const port = window.location.port;
-// const server = io.connect(serverBaseUrl + ':' + port);
+const server = io.connect(serverBaseUrl + ':' + port);
 
 
 ///
@@ -36,14 +34,16 @@ const App = () => {
       setIsConnected(false);
     });
 
-    // server.on('finito', (videoIndex) => {
-    //   setVideoIndexActive(null);
-    // });
+    server.on('finito', (videoIndex) => {
+      setVideoIndexActive(null);
+    });
+
+    console.log("socket connected: " + socket.connected)
 
     return () => {
       socket.off('connect');
       socket.off('disconnect');
-      // server.off('finito');
+      server.off('finito');
     };
   }, []);
 
@@ -51,18 +51,10 @@ const App = () => {
     setVideoIndexActive(videoIndex);
   }
 
-  // return (
-  //   <div className="min-h-screen flex flex-col items-center p-7">
-  //     <p>عربو!</p>
-  //     <VideoElement/>
-  //     <VideoElement/>
-  //   </div>
-  // )
-
   return (
-    <div id="App" className="min-h-screen flex flex-col justify-between items-center p-7">
+    <div className="min-h-screen flex flex-col justify-between items-center p-2">
       <Header />
-      <List />
+      <List activeElement={videoIndexActive}/>
       <Footer />
     </div>
   )
