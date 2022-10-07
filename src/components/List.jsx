@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { VideoElement, VideoElementState } from "./subComponents/VideoElement";
 
 
-const List = ({ activeElement }) => {
+const List = ({ activeElement, clickOnVideo }) => {
 
     useEffect(() => {
         console.log("List - Active Element: " + activeElement);
@@ -14,15 +14,31 @@ const List = ({ activeElement }) => {
     const numbers = [1, 2, 3, 4, 5, 6];
 
 
-    const listItems = numbers.map((number) =>
-        <VideoElement key={number} index={number} />
-    );
+    // const listItems = numbers.map((number) =>
+    //     <VideoElement key={number} index={number} />
+    // );
 
     return (
         <div className="bg-blue-400 flex-1 w-full flex items-center">
             <ul className="w-full">
                 {
-                    numbers.map((index) => <VideoElement key={index} index={index} />)
+                    numbers.map((index) =>
+                        <VideoElement
+                            key={index}
+                            index={index}
+                            clickOnVideo={clickOnVideo}
+                            // newState={VideoElementState.IDLE}
+
+                            // newState={index == activeElement ? VideoElementState.SELECTED : VideoElementState.INACTIVE}
+
+                            newState={index == activeElement ? VideoElementState.SELECTED : VideoElementState.INACTIVE}
+
+                            activeElement={activeElement}
+
+
+
+
+                        />)
                 }
             </ul>
         </div>

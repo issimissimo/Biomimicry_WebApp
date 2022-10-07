@@ -48,13 +48,16 @@ const App = () => {
   }, []);
 
   const OnClickOnVideoElement = (videoIndex) => {
+    console.log("Clicked on video: " + videoIndex)
     setVideoIndexActive(videoIndex);
   }
 
   return (
     <div className="min-h-screen flex flex-col justify-between items-center p-2">
       <Header />
-      <List activeElement={videoIndexActive}/>
+      <List
+        activeElement={videoIndexActive}
+        clickOnVideo={OnClickOnVideoElement} />
       <Footer />
     </div>
   )
