@@ -15,23 +15,28 @@ export const VideoElementState = {
 }
 
 export const VideoElement = ({ index }) => {
+    const [state, setState] = useState(VideoElementState.IDLE);
+
     return (
         <li id="VideoElement" className="p-4 flex justify-between items-center" key={index}>
-            
-                <LabelButton
-                    index={index}
-                    content={isOdd(index) ? "someValue" : null}
-                />
-            
+
+            <LabelButton
+                index={index}
+                content={isOdd(index) ? "someValue" : null}
+                newState={VideoElementState.INACTIVE}
+            />
+
             <IconButton
                 index={index}
+                newState={VideoElementState.INACTIVE}
             />
-            
-                <LabelButton
-                    index={index}
-                    content={isEven(index) ? "someValue" : null}
-                />
-            
+
+            <LabelButton
+                index={index}
+                content={isEven(index) ? "someValue" : null}
+                newState={VideoElementState.INACTIVE}
+            />
+
         </li>
     )
 }
