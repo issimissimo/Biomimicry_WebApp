@@ -50,6 +50,11 @@ const App = () => {
   const OnClickOnVideoElement = (videoIndex) => {
     console.log("Clicked on video: " + videoIndex)
     setVideoIndexActive(videoIndex);
+
+    if (isConnected) {
+      console.log("Play video: " + videoIndex)
+      server.emit('play', videoIndex);
+    }
   }
 
   return (

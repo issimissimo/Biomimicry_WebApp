@@ -1,43 +1,21 @@
-/// React
-import { useState, useEffect, useRef } from "react";
-
 /// Subcomponents
-import { VideoElement, VideoElementState } from "./subComponents/VideoElement";
+import VideoElement from "./subComponents/VideoElement";
 
 
 const List = ({ activeElement, clickOnVideo }) => {
 
-    useEffect(() => {
-        console.log("List - Active Element: " + activeElement);
-    }, []);
-
     const numbers = [1, 2, 3, 4, 5, 6];
-
-
-    // const listItems = numbers.map((number) =>
-    //     <VideoElement key={number} index={number} />
-    // );
 
     return (
         <div className="bg-blue-400 flex-1 w-full flex items-center">
-            <ul className="w-full">
+            <ul className="w-full flex-1 flex flex-col justify-between">
                 {
                     numbers.map((index) =>
                         <VideoElement
                             key={index}
                             index={index}
                             clickOnVideo={clickOnVideo}
-                            // newState={VideoElementState.IDLE}
-
-                            // newState={index == activeElement ? VideoElementState.SELECTED : VideoElementState.INACTIVE}
-
-                            newState={index == activeElement ? VideoElementState.SELECTED : VideoElementState.INACTIVE}
-
                             activeElement={activeElement}
-
-
-
-
                         />)
                 }
             </ul>
