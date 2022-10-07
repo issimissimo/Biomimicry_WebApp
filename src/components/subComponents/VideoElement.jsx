@@ -6,22 +6,24 @@ import LabelButton from "./VideoElementResources/LabelButton";
 import { isOdd, isEven } from "../../utils/maths";
 
 
-const VideoElement = ({ activeElement, index, clickOnVideo }) => {
+const VideoElement = ({ activeElement, index, clickOnVideo, isEng }) => {
 
     return (
-        <li id="VideoElement" className="my-3 p-4 flex justify-between items-center" key={index}>
+        <li id="VideoElement" className="p-4 flex justify-between items-center" key={index}>
 
             <LabelButton
                 activeElement={activeElement}
                 index={index}
                 content={isOdd(index) ? "someValue" : null}
                 clickOnVideo={clickOnVideo}
+                isEng={isEng}
             />
 
             <IconButton
                 activeElement={activeElement}
                 index={index}
                 clickOnVideo={clickOnVideo}
+                isEng={isEng}
             />
 
             <LabelButton
@@ -29,6 +31,7 @@ const VideoElement = ({ activeElement, index, clickOnVideo }) => {
                 index={index}
                 content={isEven(index) ? "someValue" : null}
                 clickOnVideo={clickOnVideo}
+                isEng={isEng}
             />
 
         </li>

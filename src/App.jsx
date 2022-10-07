@@ -24,6 +24,8 @@ const server = io.connect(serverBaseUrl + ':' + port);
 const App = () => {
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [videoIndexActive, setVideoIndexActive] = useState(null);
+  const [isEnglish, setIsEnglish] = useState(true);
+
 
   useEffect(() => {
     socket.on('connect', () => {
@@ -57,12 +59,21 @@ const App = () => {
     }
   }
 
+  const SetLanguageIsEnglish = (value) => {
+    console.log("Language is English: " + value);
+    setIsEnglish(value);
+  }
+
+
+
   return (
-    <div className="min-h-screen flex flex-col justify-between items-center p-2">
-      <Header />
+    <div className="min-h-screen flex flex-col justify-between items-center p-8">
+      <Header clickOnLanguage={SetLanguageIsEnglish} />
       <List
         activeElement={videoIndexActive}
-        clickOnVideo={OnClickOnVideoElement} />
+        clickOnVideo={OnClickOnVideoElement}
+        isEng={isEnglish}
+      />
       <Footer />
     </div>
   )

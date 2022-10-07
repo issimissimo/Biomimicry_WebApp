@@ -1,17 +1,31 @@
-const LanguageButtons = () => {
+const LanguageButtons = ({ clickOnLanguage }) => {
     return (
         <div>
-            <button>English</button>
-            <button>عربو</button>
+
+            <button
+                onClick={() => clickOnLanguage(true)}
+            >
+                English
+            </button>
+
+
+            <button
+                onClick={() => clickOnLanguage(false)}
+            >
+                عربو
+            </button>
+
         </div>
     )
 }
 
 
-const Header = () => {
+const Header = ({ clickOnLanguage }) => {
     return (
         <div className="bg-red-700 h-24 w-full flex items-center justify-between">
-            <LanguageButtons/>
+            <LanguageButtons
+                clickOnLanguage={clickOnLanguage}
+            />
             <p>logo</p>
         </div>
     )
