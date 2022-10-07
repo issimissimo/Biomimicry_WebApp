@@ -10,7 +10,7 @@ const LanguageButtons = () => {
 
 const Header = () => {
     return (
-        <div className="bg-red-700 h-9 w-full flex items-center justify-between">
+        <div className="bg-red-700 h-12 w-full flex items-center justify-between">
             <LanguageButtons/>
             <p>logo</p>
         </div>

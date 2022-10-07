@@ -1,5 +1,12 @@
-import CircleButton from "./VideoElementRes/CircleButton";
-import LabelButton from "./VideoElementRes/LabelButton";
+/// React
+import { useState, useEffect, useRef } from "react";
+
+/// VideoElementResources
+import IconButton from "./VideoElementResources/IconButton";
+import LabelButton from "./VideoElementResources/LabelButton";
+
+/// Utils
+import { isOdd, isEven } from "../../utils/maths";
 
 export const VideoElementState = {
     IDLE: Symbol("idle"),
@@ -7,8 +14,24 @@ export const VideoElementState = {
     INACTIVE: Symbol("inactive"),
 }
 
-export const VideoElement = () => {
+export const VideoElement = ({ index }) => {
     return (
-        <LabelButton/>
+        <li id="VideoElement" className="p-4 flex justify-between items-center" key={index}>
+            
+                <LabelButton
+                    index={index}
+                    content={isOdd(index) ? "someValue" : null}
+                />
+            
+            <IconButton
+                index={index}
+            />
+            
+                <LabelButton
+                    index={index}
+                    content={isEven(index) ? "someValue" : null}
+                />
+            
+        </li>
     )
 }
