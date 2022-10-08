@@ -6,6 +6,9 @@
     margin-left: 2.5rem;
     margin-right: 2.5rem;
     border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .IconButton_Idle {

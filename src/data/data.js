@@ -1,3 +1,9 @@
+import past from "../images/past.svg";
+import animals from "../images/animals.svg";
+import plants from "../images/plants.svg";
+import underwater from "../images/underwater.svg";
+import microscopic from "../images/microscopic.svg";
+import future from "../images/future.svg";
 
 export const data =
     [
@@ -8,6 +14,7 @@ export const data =
             color_idle: "#ac4d96",
             color_selected: "#f431c1",
             color_disabled: "#717070",
+            icon: past
         },
 
         {
@@ -17,6 +24,7 @@ export const data =
             color_idle: "#7a5399",
             color_selected: "#a566ff",
             color_disabled: "#717070",
+            icon: animals
         },
 
         {
@@ -26,6 +34,7 @@ export const data =
             color_idle: "#50539f",
             color_selected: "#4d6bff",
             color_disabled: "#717070",
+            icon: plants
         },
 
         {
@@ -35,6 +44,7 @@ export const data =
             color_idle: "#4e81a7",
             color_selected: "#43b4ed",
             color_disabled: "#717070",
+            icon: underwater
         },
 
         {
@@ -44,6 +54,7 @@ export const data =
             color_idle: "#52a39d",
             color_selected: "#66ddcc",
             color_disabled: "#717070",
+            icon: microscopic
         },
 
         {
@@ -53,6 +64,7 @@ export const data =
             color_idle: "#4fa875",
             color_selected: "#29d36d",
             color_disabled: "#717070",
+            icon: future
         },
     ]
 
