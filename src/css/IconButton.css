@@ -1,11 +1,37 @@
 .IconButton {
-    width: 150px;
-    height: 150px;
-    border: solid 1px #555;
-    background-color: #eed;
-    box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-    -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-    border-radius: 100px;
+    width: 10rem;
+    height: 10rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    border-radius: 5rem;
 }
+
+.IconButton_Idle {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(128deg, rgba(255, 255, 255, 0.4) 0%, rgba(0,0,0,0) 70%);
+    cursor: pointer;
+}
+
+.IconButton_Selected {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(311deg, rgba(255, 255, 255, 0.4) 0%, rgba(0,0,0,0) 70%);
+    cursor: pointer;
+}
+
+.IconButton_Disabled {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(128deg, rgba(255, 255, 255, 0.4) 0%, rgba(0,0,0,0) 70%);
+    cursor: not-allowed;
+}
+

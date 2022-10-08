@@ -4,8 +4,6 @@ import "../../../css/LabelButton.css";
 
 const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => {
 
-    const color = "#ac4d96";
-
     if (content) {
         if (activeElement == null) {
             return (
@@ -29,7 +27,7 @@ const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => 
                     // onClick={() => clickOnVideo(index)}
                     >
                         <div className="LabelButton" style={{"backgroundColor": data[index - 1].color_disabled}}>
-                            <p className="text-3xl text-white">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p>
+                            <p className="text-3xl text-gray-200">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p>
                         </div>
                     </div>
                 )
