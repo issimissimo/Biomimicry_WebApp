@@ -1,7 +1,9 @@
+import logo2 from "../images/logo2.png"
+
 const Footer = () => {
     return (
-        <div className="bg-green-600 h-20 w-full flex items-center">
-            <p>Footer</p>
+        <div className="h-20 w-full flex items-center">
+            <img src={logo2} />
         </div>
     )
 }

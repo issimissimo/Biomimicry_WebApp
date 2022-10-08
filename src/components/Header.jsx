@@ -1,3 +1,5 @@
+import logo1 from "../images/logo1.png"
+
 const LanguageButtons = ({ clickOnLanguage }) => {
     return (
         <div>
@@ -22,11 +24,11 @@ const LanguageButtons = ({ clickOnLanguage }) => {
 
 const Header = ({ clickOnLanguage }) => {
     return (
-        <div className="bg-red-700 h-24 w-full flex items-center justify-between">
+        <div className="h-32 w-full flex items-center justify-between">
             <LanguageButtons
                 clickOnLanguage={clickOnLanguage}
             />
-            <p>logo</p>
+            <img src={logo1} />
         </div>
     )
 }
