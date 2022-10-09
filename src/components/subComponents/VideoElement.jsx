@@ -9,7 +9,7 @@ import { isOdd, isEven } from "../../utils/maths";
 const VideoElement = ({ activeElement, index, clickOnVideo, isEng }) => {
 
     return (
-        <li id="VideoElement" className="p-4 flex justify-between items-center" key={index}>
+        <li className="p-4 flex justify-between items-center" key={index}>
 
             <LabelButton
                 activeElement={activeElement}

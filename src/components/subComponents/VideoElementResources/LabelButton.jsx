@@ -39,7 +39,7 @@ const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => 
                 className={`flex-1 flex items-center ${isOdd(index) ? "justify-end" : "justify-start"}`}>
                 <div
                     className="LabelButton"
-                    style={{ backgroundColor: BackgroundColor(), color: TextColor(), cursor: Cursor() }}
+                    style={{ backgroundColor: BackgroundColor(), color: TextColor(), cursor: Cursor(), transition: "all .5s ease" }}
                     onClick={HandleClick}>
 
                     <p className="text-3xl">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p>

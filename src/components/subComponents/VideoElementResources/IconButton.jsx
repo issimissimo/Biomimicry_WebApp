@@ -34,12 +34,19 @@ const IconButton = ({ activeElement, index, clickOnVideo }) => {
             return "IconButton_Selected";
         }
     }
+    const Transition = () => {
+        if (activeElement == null) return "all .5s ease";
+        else {
+            if (activeElement != index) return "all .5s ease";
+            return null;
+        }
+    }
 
-    
+
     /// RENDER
     return (
         <div className={`IconButton ${Class()}`}
-            style={{ backgroundColor: BackgroundColor() }}
+            style={{ backgroundColor: BackgroundColor(), transition: Transition(), }}
             onClick={HandleClick}
         >
             <img className="w-20" src={Icon()} />

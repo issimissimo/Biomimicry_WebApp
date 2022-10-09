@@ -50,7 +50,6 @@ const App = () => {
   }, []);
 
   const OnClickOnVideoElement = (videoIndex) => {
-    console.log("Clicked on video: " + videoIndex)
     setVideoIndexActive(videoIndex);
 
     if (isConnected) {
@@ -70,12 +69,13 @@ const App = () => {
   // )
   return (
     <div className="min-h-screen flex flex-col justify-between items-center p-8">
-      <Header clickOnLanguage={SetLanguageIsEnglish} />
+      <Header
+        clickOnLanguage={SetLanguageIsEnglish}
+        isEng={isEnglish} />
       <List
         activeElement={videoIndexActive}
         clickOnVideo={OnClickOnVideoElement}
-        isEng={isEnglish}
-      />
+        isEng={isEnglish} />
       <Footer />
     </div>
   )

@@ -1,31 +1,35 @@
 import logo1 from "../images/logo1.png"
+import "../css/LanguageButton.css"
 
-const LanguageButtons = ({ clickOnLanguage }) => {
+const LanguageButtons = ({ clickOnLanguage, isEng }) => {
     return (
-        <div>
+        <div className="flex">
 
-            <button
-                onClick={() => clickOnLanguage(true)}>
+            <div
+                className={`LanguageButton ${isEng ? "LanguageButton_Selected" : "LanguageButton_Idle"}`}
+                onClick={() => clickOnLanguage(true)}
+                style={{ backgroundColor: "#c7c7c7" }}>
                 English
-            </button>
+            </div>
 
 
-            <button
-                onClick={() => clickOnLanguage(false)}>
+            <div className={`LanguageButton ${!isEng ? "LanguageButton_Selected" : "LanguageButton_Idle"}`}
+                onClick={() => clickOnLanguage(false)}
+                style={{ backgroundColor: "#c7c7c7" }}>
                 عربو
-            </button>
+            </div>
 
         </div>
     )
 }
 
 
-const Header = ({ clickOnLanguage }) => {
+const Header = ({ clickOnLanguage, isEng }) => {
     return (
         <div className="h-32 w-full flex items-center justify-between">
             <LanguageButtons
                 clickOnLanguage={clickOnLanguage}
-            />
+                isEng={isEng} />
             <img src={logo1} />
         </div>
     )
