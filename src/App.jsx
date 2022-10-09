@@ -60,12 +60,14 @@ const App = () => {
   }
 
   const SetLanguageIsEnglish = (value) => {
-    console.log("Language is English: " + value);
     setIsEnglish(value);
   }
 
 
-
+  /// RENDER
+  // if (!isConnected) return (
+  //   <SocketError />
+  // )
   return (
     <div className="min-h-screen flex flex-col justify-between items-center p-8">
       <Header clickOnLanguage={SetLanguageIsEnglish} />

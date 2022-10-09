@@ -5,15 +5,13 @@ const LanguageButtons = ({ clickOnLanguage }) => {
         <div>
 
             <button
-                onClick={() => clickOnLanguage(true)}
-            >
+                onClick={() => clickOnLanguage(true)}>
                 English
             </button>
 
 
             <button
-                onClick={() => clickOnLanguage(false)}
-            >
+                onClick={() => clickOnLanguage(false)}>
                 عربو
             </button>
 
