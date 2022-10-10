@@ -17,7 +17,7 @@ const StopButton = ({ activeElement, clickOnVideo }) => {
     /// RENDER
     return (
         <div className={`StopButton ${Class()}`}
-            style={{ backgroundColor: BackgroundColor() }}
+            style={{ backgroundColor: BackgroundColor(), transition: "all .5s ease" }}
             onClick={() => clickOnVideo(null)}
         >
             <img className="w-20" src={stop} />

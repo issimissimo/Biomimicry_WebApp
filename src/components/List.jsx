@@ -1,7 +1,6 @@
-/// Subcomponents
 import VideoElement from "./subComponents/VideoElement";
 import StopButton from "./subComponents/VideoElementResources/StopButton";
-
+import { AttentionSeeker } from "react-awesome-reveal";
 import { data } from "./../data/data";
 
 
@@ -9,6 +8,8 @@ const List = ({ activeElement, clickOnVideo, isEng }) => {
 
     return (
         <div className="flex-1 w-full flex flex-col justify-center items-center">
+
+
             <ul className="w-full flex-1 flex flex-col justify-center">
                 {
                     data.map((item) =>
@@ -21,10 +22,51 @@ const List = ({ activeElement, clickOnVideo, isEng }) => {
                         />)
                 }
             </ul>
+
+
+
+            {/* {activeElement ?
+
+                <AttentionSeeker effect="pulse">
+
+                </AttentionSeeker>
+                
+                
+                :
+
+                <div className="w-full flex-1 flex flex-col justify-center items-center">
+
+
+
+                    <StopButton
+                        clickOnVideo={clickOnVideo}
+                        activeElement={activeElement} />
+
+
+
+                </div>
+            } */}
+
             <div className="w-full flex-1 flex flex-col justify-center items-center">
-                <StopButton
-                    clickOnVideo={clickOnVideo}
-                    activeElement={activeElement} />
+
+                {activeElement ?
+
+                    <AttentionSeeker effect="pulse">
+                        <StopButton
+                            clickOnVideo={clickOnVideo}
+                            activeElement={activeElement}
+                        />
+                    </AttentionSeeker>
+
+                    :
+
+                    <StopButton
+                        clickOnVideo={clickOnVideo}
+                        activeElement={activeElement}
+                    />
+
+                }
+
             </div>
 
         </div>

@@ -15,11 +15,14 @@
 .StopButton_Disabled {
     cursor: not-allowed;
     background-color: gray;
+    transition: all .5s ease;
+    opacity: 0.6;
 }
 
 .StopButton_Enabled {
     cursor: pointer;
     transition: all .5s ease;
+    opacity: 1;
 }
 
 .StopButton_Disabled img {

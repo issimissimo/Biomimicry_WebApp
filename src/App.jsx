@@ -71,9 +71,9 @@ const App = () => {
 
 
   /// RENDER
-  if (!isConnected) return (
-    <SocketError />
-  )
+  // if (!isConnected) return (
+  //   <SocketError />
+  // )
   return (
     <div className="min-h-screen flex flex-col justify-between items-center p-8">
       <Header

@@ -1,5 +1,4 @@
 import { data } from "../../../data/data"
-import { isOdd, isEven } from "../../../utils/maths";
 import "../../../css/LabelButton.css";
 
 const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => {
@@ -31,6 +30,14 @@ const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => 
         }
     }
 
+    const Opacity = () => {
+        if (activeElement == null) return "1";
+        else {
+            if (activeElement != index) return "0.6";
+            return "1";
+        }
+    }
+
 
     /// RENDER
 
@@ -39,7 +46,7 @@ const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => 
             className="m-8 flex-1 flex items-center justify-center">
             <div
                 className="LabelButton"
-                style={{ backgroundColor: BackgroundColor(), color: TextColor(), cursor: Cursor(), transition: "all .5s ease" }}
+                style={{ backgroundColor: BackgroundColor(), color: TextColor(), cursor: Cursor(), transition: "all .5s ease", opacity: Opacity() }}
                 onClick={HandleClick}>
 
                 <p className="text-3xl">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p>
