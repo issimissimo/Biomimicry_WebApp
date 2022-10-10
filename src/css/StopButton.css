@@ -24,7 +24,7 @@
 
 .StopButton_Disabled img {
     opacity: 0.5;
-    /* transition: opacity .5s ease; */
+    transition: opacity .5s ease;
 }
 
 .StopButton_Enabled img {

@@ -37,6 +37,7 @@ const App = () => {
     });
 
     server.on('finito', (videoIndex) => {
+      console.log("Video: " + videoIndex + "-- ENDED");
       setVideoIndexActive(null);
     });
 
@@ -53,11 +54,12 @@ const App = () => {
     if (isConnected) {
       if (videoIndex != null) {
         console.log("Play video: " + videoIndex)
-        server.emit('play', videoIndex);
+        const lang = isEnglish ? "eng" : "ara";
+        server.emit('play', { ID: videoIndex, lingua: lang }, (data) => {});
       }
       else {
         console.log("Stop video: " + videoIndexActive)
-        // server.emit('stop', videoIndexActive);
+        server.emit('stoppa');
       }
     }
     setVideoIndexActive(videoIndex);
@@ -69,9 +71,9 @@ const App = () => {
 
 
   /// RENDER
-  // if (!isConnected) return (
-  //   <SocketError />
-  // )
+  if (!isConnected) return (
+    <SocketError />
+  )
   return (
     <div className="min-h-screen flex flex-col justify-between items-center p-8">
       <Header
