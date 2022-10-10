@@ -33,27 +33,22 @@ const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => 
 
 
     /// RENDER
-    if (content) {
-        return (
+
+    return (
+        <div
+            className="m-8 flex-1 flex items-center justify-center">
             <div
-                className={`flex-1 flex items-center ${isOdd(index) ? "justify-end" : "justify-start"}`}>
-                <div
-                    className="LabelButton"
-                    style={{ backgroundColor: BackgroundColor(), color: TextColor(), cursor: Cursor(), transition: "all .5s ease" }}
-                    onClick={HandleClick}>
+                className="LabelButton"
+                style={{ backgroundColor: BackgroundColor(), color: TextColor(), cursor: Cursor(), transition: "all .5s ease" }}
+                onClick={HandleClick}>
 
-                    <p className="text-3xl">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p>
+                <p className="text-3xl">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p>
 
-                </div>
             </div>
-        )
-    }
-    else {
-        return (
-            /// EMPTY
-            <div className="flex-1 h-8 bg-transparent pointer-events-none" />
-        )
-    }
+        </div>
+    )
+
+
 
 
 }

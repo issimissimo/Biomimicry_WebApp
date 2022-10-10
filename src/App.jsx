@@ -50,12 +50,17 @@ const App = () => {
   }, []);
 
   const OnClickOnVideoElement = (videoIndex) => {
-    setVideoIndexActive(videoIndex);
-
     if (isConnected) {
-      console.log("Play video: " + videoIndex)
-      server.emit('play', videoIndex);
+      if (videoIndex != null) {
+        console.log("Play video: " + videoIndex)
+        server.emit('play', videoIndex);
+      }
+      else {
+        console.log("Stop video: " + videoIndexActive)
+        // server.emit('stop', videoIndexActive);
+      }
     }
+    setVideoIndexActive(videoIndex);
   }
 
   const SetLanguageIsEnglish = (value) => {
@@ -70,6 +75,7 @@ const App = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between items-center p-8">
       <Header
+        activeElement={videoIndexActive}
         clickOnLanguage={SetLanguageIsEnglish}
         isEng={isEnglish} />
       <List

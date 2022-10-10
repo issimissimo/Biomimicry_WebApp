@@ -1,0 +1,33 @@
+.StopButton {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;/* for removing the highlight */
+}
+
+.StopButton_Disabled {
+    cursor: not-allowed;
+    background-color: gray;
+}
+
+.StopButton_Enabled {
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.StopButton_Disabled img {
+    opacity: 0.5;
+    /* transition: opacity .5s ease; */
+}
+
+.StopButton_Enabled img {
+    opacity: 1;
+    transition: opacity .5s ease;
+}

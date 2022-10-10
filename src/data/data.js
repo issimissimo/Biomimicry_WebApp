@@ -29,7 +29,7 @@ export const data =
 
         {
             id: 3,
-            label_eng: "Plants",
+            label_eng: "Vegetals",
             label_ar: "النباتات",
             color_idle: "#50539f",
             color_selected: "#4d6bff",

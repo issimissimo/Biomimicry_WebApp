@@ -5,22 +5,40 @@
     border-radius: 2.5em;
     margin: 1em;
     -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    color: white;
+    letter-spacing: 2px;
+    font-family:'ithra-medium';
+    box-sizing: border-box;
 }
 
 .LanguageButton_Idle{
-    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.6);
-    -o-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.6);
-    background: linear-gradient(128deg, rgba(255, 255, 255, 0.4) 0%, rgba(0,0,0,0) 70%);
+    box-shadow: 0 0 0 1px;
     cursor: pointer;
+    opacity: 1;
 }
 
 .LanguageButton_Selected{
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
-    -o-box-shadow: 0px 0px 8x rgba(0, 0, 0, 0.6);
-    background: linear-gradient(311deg, rgba(255, 255, 255, 0.4) 0%, rgba(0,0,0,0) 70%);
+    box-shadow: 0 0 0 3px;
     cursor: not-allowed;
+    
+}
+
+.LanguageButton_Disabled{
+    cursor: not-allowed;
+    
+    
+}
+
+.Container_enabled{
+    display: flex;
+    opacity: 1;
+    transition: all .5s ease;
+    pointer-events: auto;
+}
+
+.Container_disabled{
+    display: flex;
+    opacity: 0.5;
+    transition: all .5s ease;
+    pointer-events: none;
 }
