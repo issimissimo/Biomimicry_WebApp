@@ -1,6 +1,7 @@
 import { data } from "../../../data/data"
 import "../../../css/LabelButton.css";
 
+
 const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => {
 
     /// PARAMS
@@ -38,18 +39,29 @@ const LabelButton = ({ activeElement, index, content, clickOnVideo, isEng }) => 
         }
     }
 
+    const Width = () => {
+        // return isEng ? data[index - 1].width_eng : isEng ? data[index - 1].width_ara
+        if (isEng) return data[index - 1].width_eng
+        else return data[index - 1].width_ara
+    }
+
 
     /// RENDER
 
     return (
         <div
-            className="m-8 flex-1 flex items-center justify-center">
+            className="m-7 flex-1 flex items-center justify-center">
             <div
                 className="LabelButton"
                 style={{ backgroundColor: BackgroundColor(), color: TextColor(), cursor: Cursor(), transition: "all .5s ease", opacity: Opacity() }}
                 onClick={HandleClick}>
 
-                <p className="text-3xl">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p>
+                {/* <p className="text-3xl">{isEng ? data[index - 1].label_eng : data[index - 1].label_ar}</p> */}
+                <img
+                    className="h-11"
+                    // style={{ width: data[index - 1].width }}
+                    style={{ width: Width() }}
+                    src={isEng ? data[index - 1].label_svg_eng : data[index - 1].label_svg_ar} />
 
             </div>
         </div>

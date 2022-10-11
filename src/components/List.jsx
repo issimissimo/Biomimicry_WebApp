@@ -24,29 +24,6 @@ const List = ({ activeElement, clickOnVideo, isEng }) => {
             </ul>
 
 
-
-            {/* {activeElement ?
-
-                <AttentionSeeker effect="pulse">
-
-                </AttentionSeeker>
-                
-                
-                :
-
-                <div className="w-full flex-1 flex flex-col justify-center items-center">
-
-
-
-                    <StopButton
-                        clickOnVideo={clickOnVideo}
-                        activeElement={activeElement} />
-
-
-
-                </div>
-            } */}
-
             <div className="w-full flex-1 flex flex-col justify-center items-center">
 
                 {activeElement ?
